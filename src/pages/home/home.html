@@ -11,7 +11,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let product of products">
-      <button ion-item (click)="editProduct(product.id)">
+      <button ion-item (click)="editProduct(product.pro_id)">
         <h1>{{ product.nome }}</h1>
         <h2>{{ product.nome_categoria }}</h2>
         <h2>{{ product.vencimento | Data: 'dd/MM/yyyy' }}</h2>
@@ -28,7 +28,7 @@
     </ion-item-sliding>
   </ion-list>
   <ion-fab right bottom>
-    <button icon-fab color="light" (click)="addProduct()"><icon-icon name="add"></icon-icon></button>
+    <button icon-fab color="light" (click)="addProduct()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
   <ion-footer>
