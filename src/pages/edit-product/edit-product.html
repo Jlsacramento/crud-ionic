@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic SQLite Exemplo
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Preço</ion-label>
+      <ion-input type="number" name="preco" [(ngModel)]="model.preco"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Vencimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" name="vencimento" min="2018" max="2020-12-31" [(ngModel)]="model.vencimento"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Categoria</ion-label>
+      <ion-select name="cat_id" [(ngModel)]="model.cat_id">
+        <ion-option *ngFor="let category of categories" value="{{ category.cat_id }}">{{ category.nome }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Ativo</ion-label>
+      <icon-checkbox name="ativo" [(ngModel)]="model.ativo"></icon-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block (click)="save()">Salvar</button>
+
+</ion-content>
