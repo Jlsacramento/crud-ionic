@@ -16,6 +16,7 @@ export class DatabaseProvider {
   public createDatabase() {
     return this.getDB()
     .then((db: SQLiteObject) => {
+      
       this.createTables(db);
       this.insertDefaultItems(db);
     })
@@ -47,5 +48,4 @@ export class DatabaseProvider {
     })
     .catch(e => console.error('Erro ao consultar a quantidade de categorias.', e));
   }
-
 }

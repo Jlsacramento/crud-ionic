@@ -7,7 +7,7 @@ import { ProductProvider, Product } from '../../providers/product/product';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  products: any[] = [];
+  produtos: any[] = [];
   onlyInactives: boolean = false;
   searchText: string = null;
 
@@ -20,7 +20,7 @@ export class HomePage {
   getAllProducts() {
     this.productProvider.getAll(!this.onlyInactives, this.searchText)
       .then((result: any) => {
-        this.products = result;
+        this.produtos = result;
       });
   }
 
@@ -32,11 +32,11 @@ export class HomePage {
     this.navCtrl.push('EditProductPage', { id: id });
   }
 
-  removeProduct(product: Product) {
-    this.productProvider.remove(product.pro_id)
+  removeProduct(produto: Product) {
+    this.productProvider.remove(produto.pro_id)
       .then(() => {
-        var index = this.products.indexOf(product);
-        this.products.splice(index, 1);
+        var index = this.produtos.indexOf(produto);
+        this.produtos.splice(index, 1);
         this.toast.create({ message: 'Produto removido.', duration: 3000, position: 'botton' }).present();
       })
   }

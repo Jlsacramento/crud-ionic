@@ -18,6 +18,7 @@ export class CategoryProvider {
             let categories: any[] = [];            
             for (var i = 0; i < data.rows.length; i++) {
               var category = data.rows.item(i);
+              console.log(data.rows.item(i));
               categories.push(category);
             }
 

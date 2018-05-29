@@ -55,5 +55,4 @@ export class EditProductPage {
       return this.productProvider.insert(this.model);
     }
   }
-
 }
